@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,9 +15,13 @@ namespace shadownaive
         [STAThread]
         static void Main()
         {
+            ThreadPool.SetMaxThreads(800, 100);
+            ThreadPool.SetMinThreads(100, 8);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
         }
+
+ 
     }
 }

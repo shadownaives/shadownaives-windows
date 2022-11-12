@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Security.Principal;
+using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -15,6 +16,8 @@ namespace shadownaive
         private string cachePath = "";
 
         private string naivePath = "";
+
+        private PacServer pacServer;
 
 
         public MainForm()
@@ -61,6 +64,9 @@ namespace shadownaive
             // this.Hide();
             Timer.Start();
             TrayMenuContext();
+
+            string content = Encoding.UTF8.GetString(Properties.Resources.proxy);
+            pacServer = new PacServer("127.0.0.1", 1081, "/proxy.pac", content);
         }
 
         private void MainFormClosed(object sender, FormClosedEventArgs e)
@@ -156,7 +162,7 @@ namespace shadownaive
         }
 
         private void StartButtonClick(object sender, EventArgs e)
-        {
+        {   
             if (File.Exists(cachePath))
             {
                 var cache = Cache.Read(cachePath);
@@ -182,7 +188,6 @@ namespace shadownaive
                 if (config.Wirte(configPath))
                 {
                     Service.Start("nnp_naive");
-                    Service.Start("nnp_nginx");
                 }
             }
             else
@@ -207,22 +212,22 @@ namespace shadownaive
         private void StopButtonClick(object sender, EventArgs e)
         {
             Service.Stop("nnp_naive");
-            Service.Stop("nnp_nginx");
         }
 
         private void ProxyOnClick(object sender, EventArgs e)
         {
+            pacServer.Start();
             WinINet.ProxyPAC("http://127.0.0.1:1081/proxy.pac");
         }
 
         private void ProxyOffClick(object sender, EventArgs e)
         {
             WinINet.Reset();
+            pacServer.Stop();
         }
 
         private void UpdateServiceStatus()
         {
-            nginxStatus.Text = Service.Status("nnp_nginx");
             naiveStatus.Text = Service.Status("nnp_naive");
         }
     }
