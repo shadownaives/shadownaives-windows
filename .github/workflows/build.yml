@@ -1,0 +1,36 @@
+name: release-build
+run-name: ${{ github.actor }}
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  Release-Build:
+    runs-on: windows-2019
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+        
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.1
+        with:
+          msbuild-architecture: x64
+          
+      - name: Build app for release
+        run: msbuild shadownaive.sln /t:Clean,Build /p:platform="Any CPU" /p:Configuration=Release
+
+      - name: Package for Windows
+        run: |
+          cd shadownaive-windows/bin/Release/
+          7z a -tzip -mx=9 -mfb=128 ../shadownaive-${{ steps.get_version.outputs.VERSION }}-windows.zip .
+          7z a -t7z -m0=lzma2 -mx=9 -mfb=64 -md=64m -ms=on ../shadownaive-${{ steps.get_version.outputs.VERSION }}-windows.7z .
+
+      - name: Upload Release Asset 	
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: shadownaive-windows/bin/shadownaive-*.zip
+          tag: ${{ github.ref }}
+          file_glob: true
+          prerelease: true
