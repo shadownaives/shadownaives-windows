@@ -9,6 +9,12 @@ jobs:
   Release-Build:
     runs-on: windows-2019
     steps:
+      # Get version
+      - name: Get version
+        id: get_version
+        shell: bash
+        run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
+
       - name: Check out repository code
         uses: actions/checkout@v3
         
