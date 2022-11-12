@@ -29,8 +29,8 @@ jobs:
       - name: Package for Windows
         run: |
           cd shadownaive-windows/bin/Release/
-          7z a -tzip -mx=9 -mfb=128 ../shadownaive-${{ steps.get_version.outputs.VERSION }}-windows.zip .
-          7z a -t7z -m0=lzma2 -mx=9 -mfb=64 -md=64m -ms=on ../shadownaive-${{ steps.get_version.outputs.VERSION }}-windows.7z .
+          7z a -tzip -mx=9 -mfb=128 ../shadownaive-${{ steps.get_version.outputs.VERSION }}.zip .
+          7z a -t7z -m0=lzma2 -mx=9 -mfb=64 -md=64m -ms=on ../shadownaive-${{ steps.get_version.outputs.VERSION }}.7z .
 
       - name: Upload Release Asset 	
         uses: svenstaro/upload-release-action@v2
