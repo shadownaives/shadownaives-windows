@@ -19,7 +19,6 @@ namespace shadownaive
 
         private PacServer pacServer;
 
-
         public MainForm()
         {
             InitializeComponent();
