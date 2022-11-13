@@ -16,25 +16,20 @@ jobs:
         uses: microsoft/setup-msbuild@v1.1
         with:
           msbuild-architecture: x64
-      
-	  # Build
+
       - name: Build app for release
         run: msbuild shadownaive.sln /t:Clean,Build /p:platform="Any CPU" /p:Configuration=Release
 
-      # Get version
       - name: Get version
         id: get_version
-        shell: bash
         run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
 
-      # Package
       - name: Package for Windows
         run: |
           cd shadownaive-windows/bin/Release/
           7z a -tzip -mx=9 -mfb=128 ../shadownaive-${{ steps.get_version.outputs.VERSION }}-windows.zip .
           7z a -t7z -m0=lzma2 -mx=9 -mfb=64 -md=64m -ms=on ../shadownaive-${{ steps.get_version.outputs.VERSION }}-windows.7z .
 
-	  # Publish
       - name: Upload Release Asset 	
         uses: svenstaro/upload-release-action@v2
         with:
