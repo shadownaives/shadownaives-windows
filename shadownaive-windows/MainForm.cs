@@ -213,6 +213,9 @@ namespace shadownaive
         private void StopButtonClick(object sender, EventArgs e)
         {
             Service.Stop("nnp_naive");
+            if (File.Exists(configPath)) {
+                File.Delete(configPath);
+            }
         }
 
         private void ProxyOnClick(object sender, EventArgs e)
