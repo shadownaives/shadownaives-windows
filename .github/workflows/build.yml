@@ -3,7 +3,7 @@ run-name: ${{ github.actor }}
 on:
   push:
     tags:
-      - 'v*'
+      - '*'
 
 jobs:
   Release-Build:
