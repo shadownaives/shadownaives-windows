@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Security.Principal;
+using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -16,6 +17,8 @@ namespace shadownaive
 
         private string naivePath = "";
 
+        private PacServer pacServer;
+
 
         public MainForm()
         {
@@ -24,6 +27,8 @@ namespace shadownaive
 
         private void MainFormLoad(object sender, System.EventArgs e)
         {
+            ThreadPool.SetMaxThreads(800, 100);
+            ThreadPool.SetMinThreads(100, 8);
             naivePath = Path.Combine(currentPath, "naive");
             configPath = Path.Combine(currentPath, "naive", "config.json");
             cachePath = Path.Combine(currentPath, "naive", "config.ini");
@@ -61,6 +66,8 @@ namespace shadownaive
             // this.Hide();
             Timer.Start();
             TrayMenuContext();
+            string content = Encoding.UTF8.GetString(Properties.Resources.proxy);
+            pacServer = new PacServer("127.0.0.1", 1081, "/proxy.pac", content);
         }
 
         private void MainFormClosed(object sender, FormClosedEventArgs e)
@@ -182,7 +189,6 @@ namespace shadownaive
                 if (config.Wirte(configPath))
                 {
                     Service.Start("nnp_naive");
-                    Service.Start("nnp_nginx");
                 }
             }
             else
@@ -207,22 +213,23 @@ namespace shadownaive
         private void StopButtonClick(object sender, EventArgs e)
         {
             Service.Stop("nnp_naive");
-            Service.Stop("nnp_nginx");
         }
 
         private void ProxyOnClick(object sender, EventArgs e)
         {
             WinINet.ProxyPAC("http://127.0.0.1:1081/proxy.pac");
+            pacServer.Start();
         }
 
         private void ProxyOffClick(object sender, EventArgs e)
         {
+            pacServer.Stop();
             WinINet.Reset();
+            
         }
 
         private void UpdateServiceStatus()
         {
-            nginxStatus.Text = Service.Status("nnp_nginx");
             naiveStatus.Text = Service.Status("nnp_naive");
         }
     }
