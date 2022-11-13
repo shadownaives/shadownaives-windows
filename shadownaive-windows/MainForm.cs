@@ -9,7 +9,7 @@ namespace shadownaive
 {
     public partial class MainForm : Form
     {
-        string currentPath = Thread.GetDomain().BaseDirectory;
+        string currentPath { get { return Thread.GetDomain().BaseDirectory;  } } 
 
         private string configPath = "";
 
