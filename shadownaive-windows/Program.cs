@@ -22,7 +22,7 @@ namespace shadownaive
         {
             /// Check the single application instance while application is starting.
             /// Jansnezhu
-            int Handle = FindWindowW(null, "Shadownaive");
+
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
