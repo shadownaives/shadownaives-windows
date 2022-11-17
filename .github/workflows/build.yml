@@ -22,6 +22,7 @@ jobs:
 
       - name: Get version
         id: get_version
+        shell: bash
         run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
 
       - name: Package for Windows
