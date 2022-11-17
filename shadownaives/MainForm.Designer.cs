@@ -97,7 +97,7 @@
             this.passwordText.Name = "passwordText";
             this.passwordText.PasswordChar = '*';
             this.passwordText.Size = new System.Drawing.Size(145, 21);
-            this.passwordText.TabIndex = 3;
+            this.passwordText.TabIndex = 8;
             // 
             // domainLabel
             // 
@@ -105,7 +105,7 @@
             this.domainLabel.Location = new System.Drawing.Point(18, 23);
             this.domainLabel.Name = "domainLabel";
             this.domainLabel.Size = new System.Drawing.Size(47, 12);
-            this.domainLabel.TabIndex = 9;
+            this.domainLabel.TabIndex = 3;
             this.domainLabel.Text = "DOMAIN:";
             // 
             // accountText
@@ -114,7 +114,7 @@
             this.accountText.MaxLength = 32;
             this.accountText.Name = "accountText";
             this.accountText.Size = new System.Drawing.Size(145, 21);
-            this.accountText.TabIndex = 2;
+            this.accountText.TabIndex = 6;
             // 
             // accountLabel
             // 
@@ -122,7 +122,7 @@
             this.accountLabel.Location = new System.Drawing.Point(12, 50);
             this.accountLabel.Name = "accountLabel";
             this.accountLabel.Size = new System.Drawing.Size(53, 12);
-            this.accountLabel.TabIndex = 10;
+            this.accountLabel.TabIndex = 5;
             this.accountLabel.Text = "ACCOUNT:";
             // 
             // domainText
@@ -131,7 +131,7 @@
             this.domainText.MaxLength = 255;
             this.domainText.Name = "domainText";
             this.domainText.Size = new System.Drawing.Size(145, 21);
-            this.domainText.TabIndex = 1;
+            this.domainText.TabIndex = 4;
             // 
             // passwordLabel
             // 
@@ -139,7 +139,7 @@
             this.passwordLabel.Location = new System.Drawing.Point(6, 77);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(59, 12);
-            this.passwordLabel.TabIndex = 11;
+            this.passwordLabel.TabIndex = 7;
             this.passwordLabel.Text = "PASSWORD:";
             // 
             // socketGroupBox
@@ -160,7 +160,7 @@
             this.portText.Location = new System.Drawing.Point(46, 19);
             this.portText.Name = "portText";
             this.portText.Size = new System.Drawing.Size(38, 21);
-            this.portText.TabIndex = 4;
+            this.portText.TabIndex = 10;
             this.portText.Text = "1080";
             // 
             // addressAllRadio
@@ -169,7 +169,7 @@
             this.addressAllRadio.Location = new System.Drawing.Point(10, 75);
             this.addressAllRadio.Name = "addressAllRadio";
             this.addressAllRadio.Size = new System.Drawing.Size(65, 16);
-            this.addressAllRadio.TabIndex = 6;
+            this.addressAllRadio.TabIndex = 12;
             this.addressAllRadio.Text = "0.0.0.0";
             this.addressAllRadio.UseVisualStyleBackColor = true;
             // 
@@ -180,7 +180,7 @@
             this.addressLocalRadio.Location = new System.Drawing.Point(10, 48);
             this.addressLocalRadio.Name = "addressLocalRadio";
             this.addressLocalRadio.Size = new System.Drawing.Size(77, 16);
-            this.addressLocalRadio.TabIndex = 5;
+            this.addressLocalRadio.TabIndex = 11;
             this.addressLocalRadio.TabStop = true;
             this.addressLocalRadio.Text = "127.0.0.1";
             this.addressLocalRadio.UseVisualStyleBackColor = true;
@@ -191,7 +191,7 @@
             this.portLabel.Location = new System.Drawing.Point(10, 23);
             this.portLabel.Name = "portLabel";
             this.portLabel.Size = new System.Drawing.Size(35, 12);
-            this.portLabel.TabIndex = 15;
+            this.portLabel.TabIndex = 9;
             this.portLabel.Text = "PORT:";
             // 
             // saveButton
@@ -199,7 +199,7 @@
             this.saveButton.Location = new System.Drawing.Point(13, 129);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(44, 24);
-            this.saveButton.TabIndex = 7;
+            this.saveButton.TabIndex = 13;
             this.saveButton.Text = "SAVE";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.SaveButtonClick);
@@ -209,7 +209,7 @@
             this.stopButton.Location = new System.Drawing.Point(111, 129);
             this.stopButton.Name = "stopButton";
             this.stopButton.Size = new System.Drawing.Size(44, 24);
-            this.stopButton.TabIndex = 9;
+            this.stopButton.TabIndex = 15;
             this.stopButton.Text = "STOP";
             this.stopButton.UseVisualStyleBackColor = true;
             this.stopButton.Click += new System.EventHandler(this.StopButtonClick);
@@ -219,7 +219,7 @@
             this.startButton.Location = new System.Drawing.Point(62, 129);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(44, 24);
-            this.startButton.TabIndex = 8;
+            this.startButton.TabIndex = 14;
             this.startButton.Text = "START";
             this.startButton.UseVisualStyleBackColor = true;
             this.startButton.Click += new System.EventHandler(this.StartButtonClick);
@@ -229,7 +229,7 @@
             this.proxyOn.Location = new System.Drawing.Point(160, 129);
             this.proxyOn.Name = "proxyOn";
             this.proxyOn.Size = new System.Drawing.Size(36, 24);
-            this.proxyOn.TabIndex = 10;
+            this.proxyOn.TabIndex = 16;
             this.proxyOn.Text = "ON";
             this.proxyOn.UseVisualStyleBackColor = true;
             this.proxyOn.Click += new System.EventHandler(this.ProxyOnClick);
@@ -239,7 +239,7 @@
             this.proxyOff.Location = new System.Drawing.Point(201, 129);
             this.proxyOff.Name = "proxyOff";
             this.proxyOff.Size = new System.Drawing.Size(36, 24);
-            this.proxyOff.TabIndex = 11;
+            this.proxyOff.TabIndex = 17;
             this.proxyOff.Text = "OFF";
             this.proxyOff.UseVisualStyleBackColor = true;
             this.proxyOff.Click += new System.EventHandler(this.ProxyOffClick);

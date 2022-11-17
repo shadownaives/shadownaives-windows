@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("shadownaives")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Lightsail Inc")]
 [assembly: AssemblyProduct("shadownaives")]
 [assembly: AssemblyCopyright("Copyright © Lightsail 2022")]
 [assembly: AssemblyTrademark("")]
