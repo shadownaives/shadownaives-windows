@@ -18,7 +18,7 @@ jobs:
           msbuild-architecture: x64
 
       - name: Build app for release
-        run: msbuild shadownaive.sln /t:Clean,Build /p:platform="Any CPU" /p:Configuration=Release
+        run: msbuild shadownaives.sln /t:Clean,Build /p:platform="Any CPU" /p:Configuration=Release
 
       - name: Get version
         id: get_version
@@ -26,15 +26,14 @@ jobs:
 
       - name: Package for Windows
         run: |
-          cd shadownaive-windows/bin/Release/
-          7z a -tzip -mx=9 -mfb=128 ../shadownaive-${{ steps.get_version.outputs.VERSION }}-windows.zip .
-          7z a -t7z -m0=lzma2 -mx=9 -mfb=64 -md=64m -ms=on ../shadownaive-${{ steps.get_version.outputs.VERSION }}-windows.7z .
+          cd shadownaives-windows/bin/Release/
+          7z a -tzip -mx=9 -mfb=128 ../shadownaives-${{ steps.get_version.outputs.VERSION }}-windows.zip .
 
       - name: Upload Release Asset 	
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: shadownaive-windows/bin/shadownaive-*.zip
+          file: shadownaives-windows/bin/shadownaives-*.zip
           tag: ${{ github.ref }}
           file_glob: true
           prerelease: true
