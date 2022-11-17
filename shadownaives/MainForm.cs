@@ -19,7 +19,6 @@ namespace shadownaives
 
         private PacServer pacServer;
 
-
         public MainForm()
         {
             InitializeComponent();
@@ -28,47 +27,56 @@ namespace shadownaives
 
         private void MainFormLoad(object sender, System.EventArgs e)
         {
-            ThreadPool.SetMaxThreads(800, 100);
-            ThreadPool.SetMinThreads(100, 8);
-            naivePath = Path.Combine(currentPath, "naive");
-            configPath = Path.Combine(currentPath, "naive", "config.json");
-            cachePath = Path.Combine(currentPath, "naive", "config.ini");
-
-            if (File.Exists(cachePath))
+            if (IsAdministrator())
             {
-                var cache = Cache.Read(cachePath);
-                if (cache == null)
-                {
-                    MessageBox.Show("configuration exception!");
-                    return;
+                ThreadPool.SetMaxThreads(800, 100);
+                ThreadPool.SetMinThreads(100, 8);
+                naivePath = Path.Combine(currentPath, "naive");
+                configPath = Path.Combine(currentPath, "naive", "config.json");
+                cachePath = Path.Combine(currentPath, "naive", "config.ini");
+                if (!Directory.Exists(naivePath)) {
+                    Directory.CreateDirectory(naivePath);
                 }
-                domainText.Text = cache?.domain ?? "";
-                accountText.Text = cache?.account ?? "";
-                passwordText.Text = cache?.password ?? "";
-                portText.Text = cache?.port ?? "";
-                if (cache?.address == "127.0.0.1")
+                if (File.Exists(cachePath))
                 {
-                    addressLocalRadio.Checked = true;
-                    addressAllRadio.Checked = false;
+                    var cache = Cache.Read(cachePath);
+                    if (cache == null)
+                    {
+                        MessageBox.Show("configuration exception!");
+                        return;
+                    }
+                    domainText.Text = cache?.domain ?? "";
+                    accountText.Text = cache?.account ?? "";
+                    passwordText.Text = cache?.password ?? "";
+                    portText.Text = cache?.port ?? "";
+                    if (cache?.address == "127.0.0.1")
+                    {
+                        addressLocalRadio.Checked = true;
+                        addressAllRadio.Checked = false;
+                    }
+                    else
+                    {
+                        addressLocalRadio.Checked = false;
+                        addressAllRadio.Checked = true;
+                    }
                 }
-                else
+
+                if (!IsAdministrator())
                 {
-                    addressLocalRadio.Checked = false;
-                    addressAllRadio.Checked = true;
+
                 }
+                this.ShowInTaskbar = false;
+                // this.Hide();
+                Timer.Start();
+                TrayMenuContext();
+                string content = Encoding.UTF8.GetString(Properties.Resources.proxy);
+                pacServer = new PacServer("127.0.0.1", 1081, "/proxy.pac", content);
+
             }
-
-            if (!IsAdministrator())
-            {
+            else {
                 MessageBox.Show("Can only be run as administrator!");
                 return;
             }
-            this.ShowInTaskbar = false;
-            // this.Hide();
-            Timer.Start();
-            TrayMenuContext();
-            string content = Encoding.UTF8.GetString(Properties.Resources.proxy);
-            pacServer = new PacServer("127.0.0.1", 1081, "/proxy.pac", content);
         }
 
         private void MainFormClosed(object sender, FormClosedEventArgs e)
