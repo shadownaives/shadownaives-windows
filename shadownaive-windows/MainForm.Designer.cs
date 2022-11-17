@@ -1,4 +1,4 @@
-﻿namespace shadownaive
+﻿namespace shadownaives
 {
     partial class MainForm
     {
@@ -51,9 +51,7 @@
             this.proxyOn = new System.Windows.Forms.Button();
             this.proxyOff = new System.Windows.Forms.Button();
             this.naiveStatusLabel = new System.Windows.Forms.Label();
-            this.nginxStatusLabel = new System.Windows.Forms.Label();
             this.naiveStatus = new System.Windows.Forms.Label();
-            this.nginxStatus = new System.Windows.Forms.Label();
             this.naiveGroupBox.SuspendLayout();
             this.socketGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -200,7 +198,7 @@
             // 
             this.saveButton.Location = new System.Drawing.Point(13, 129);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(44, 30);
+            this.saveButton.Size = new System.Drawing.Size(44, 22);
             this.saveButton.TabIndex = 7;
             this.saveButton.Text = "SAVE";
             this.saveButton.UseVisualStyleBackColor = true;
@@ -208,9 +206,9 @@
             // 
             // stopButton
             // 
-            this.stopButton.Location = new System.Drawing.Point(111, 128);
+            this.stopButton.Location = new System.Drawing.Point(111, 129);
             this.stopButton.Name = "stopButton";
-            this.stopButton.Size = new System.Drawing.Size(44, 30);
+            this.stopButton.Size = new System.Drawing.Size(44, 22);
             this.stopButton.TabIndex = 9;
             this.stopButton.Text = "STOP";
             this.stopButton.UseVisualStyleBackColor = true;
@@ -218,9 +216,9 @@
             // 
             // startButton
             // 
-            this.startButton.Location = new System.Drawing.Point(62, 128);
+            this.startButton.Location = new System.Drawing.Point(62, 129);
             this.startButton.Name = "startButton";
-            this.startButton.Size = new System.Drawing.Size(44, 30);
+            this.startButton.Size = new System.Drawing.Size(44, 22);
             this.startButton.TabIndex = 8;
             this.startButton.Text = "START";
             this.startButton.UseVisualStyleBackColor = true;
@@ -228,9 +226,9 @@
             // 
             // proxyOn
             // 
-            this.proxyOn.Location = new System.Drawing.Point(160, 128);
+            this.proxyOn.Location = new System.Drawing.Point(160, 129);
             this.proxyOn.Name = "proxyOn";
-            this.proxyOn.Size = new System.Drawing.Size(36, 30);
+            this.proxyOn.Size = new System.Drawing.Size(36, 22);
             this.proxyOn.TabIndex = 10;
             this.proxyOn.Text = "ON";
             this.proxyOn.UseVisualStyleBackColor = true;
@@ -238,9 +236,9 @@
             // 
             // proxyOff
             // 
-            this.proxyOff.Location = new System.Drawing.Point(201, 128);
+            this.proxyOff.Location = new System.Drawing.Point(201, 129);
             this.proxyOff.Name = "proxyOff";
-            this.proxyOff.Size = new System.Drawing.Size(36, 30);
+            this.proxyOff.Size = new System.Drawing.Size(36, 22);
             this.proxyOff.TabIndex = 11;
             this.proxyOff.Text = "OFF";
             this.proxyOff.UseVisualStyleBackColor = true;
@@ -249,45 +247,26 @@
             // naiveStatusLabel
             // 
             this.naiveStatusLabel.AutoSize = true;
-            this.naiveStatusLabel.Location = new System.Drawing.Point(245, 128);
+            this.naiveStatusLabel.Location = new System.Drawing.Point(247, 134);
             this.naiveStatusLabel.Name = "naiveStatusLabel";
             this.naiveStatusLabel.Size = new System.Drawing.Size(41, 12);
             this.naiveStatusLabel.TabIndex = 8;
             this.naiveStatusLabel.Text = "NAIVE:";
             // 
-            // nginxStatusLabel
-            // 
-            this.nginxStatusLabel.AutoSize = true;
-            this.nginxStatusLabel.Location = new System.Drawing.Point(245, 146);
-            this.nginxStatusLabel.Name = "nginxStatusLabel";
-            this.nginxStatusLabel.Size = new System.Drawing.Size(41, 12);
-            this.nginxStatusLabel.TabIndex = 9;
-            this.nginxStatusLabel.Text = "NGINX:";
-            // 
             // naiveStatus
             // 
             this.naiveStatus.AutoSize = true;
-            this.naiveStatus.Location = new System.Drawing.Point(281, 128);
+            this.naiveStatus.Location = new System.Drawing.Point(285, 134);
             this.naiveStatus.Name = "naiveStatus";
             this.naiveStatus.Size = new System.Drawing.Size(0, 12);
             this.naiveStatus.TabIndex = 10;
-            // 
-            // nginxStatus
-            // 
-            this.nginxStatus.AutoSize = true;
-            this.nginxStatus.Location = new System.Drawing.Point(281, 146);
-            this.nginxStatus.Name = "nginxStatus";
-            this.nginxStatus.Size = new System.Drawing.Size(0, 12);
-            this.nginxStatus.TabIndex = 11;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(357, 171);
-            this.Controls.Add(this.nginxStatus);
+            this.ClientSize = new System.Drawing.Size(357, 164);
             this.Controls.Add(this.naiveStatus);
-            this.Controls.Add(this.nginxStatusLabel);
             this.Controls.Add(this.naiveStatusLabel);
             this.Controls.Add(this.proxyOff);
             this.Controls.Add(this.proxyOn);
@@ -302,7 +281,7 @@
             this.MinimizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Shadownaive";
+            this.Text = "Shadownaives";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainFormClosed);
             this.Load += new System.EventHandler(this.MainFormLoad);
             this.naiveGroupBox.ResumeLayout(false);
@@ -337,9 +316,7 @@
         private System.Windows.Forms.Button proxyOn;
         private System.Windows.Forms.Button proxyOff;
         private System.Windows.Forms.Label naiveStatusLabel;
-        private System.Windows.Forms.Label nginxStatusLabel;
         private System.Windows.Forms.Label naiveStatus;
-        private System.Windows.Forms.Label nginxStatus;
     }
 }
 

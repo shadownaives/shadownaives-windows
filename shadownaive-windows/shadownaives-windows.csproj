@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{758ECCD2-4D25-4CEA-BE2C-863FC40A73B4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>shadownaive</RootNamespace>
-    <AssemblyName>shadownaive-windows</AssemblyName>
+    <RootNamespace>shadownaives</RootNamespace>
+    <AssemblyName>shadownaives</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>shadownaive.Program</StartupObject>
+    <StartupObject>shadownaives.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>shadownaive.ico</ApplicationIcon>

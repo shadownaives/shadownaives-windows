@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace shadownaive
+namespace shadownaives
 {
     static class Program
     {

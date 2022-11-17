@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text;
 
-namespace shadownaive
+namespace shadownaives
 {
     public struct Config
     {

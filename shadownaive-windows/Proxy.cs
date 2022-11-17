@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.InteropServices;
 
-namespace shadownaive
+namespace shadownaives
 {
     #region Windows API data structure definition
     public enum InternetOptions

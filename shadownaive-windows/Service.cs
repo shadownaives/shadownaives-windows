@@ -1,7 +1,7 @@
 ﻿using System.ServiceProcess;
 using System.Windows.Forms;
 
-namespace shadownaive
+namespace shadownaives
 {
     public class Service
     {

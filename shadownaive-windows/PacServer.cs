@@ -3,7 +3,7 @@ using System.IO;
 using System.Net;
 using System.Threading;
 
-namespace shadownaive
+namespace shadownaives
 {
     public class PacServer
     {
