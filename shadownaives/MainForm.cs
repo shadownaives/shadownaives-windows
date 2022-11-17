@@ -23,6 +23,7 @@ namespace shadownaives
         public MainForm()
         {
             InitializeComponent();
+            this.TopMost = true;
         }
 
         private void MainFormLoad(object sender, System.EventArgs e)
