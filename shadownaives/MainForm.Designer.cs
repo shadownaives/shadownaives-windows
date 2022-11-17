@@ -198,7 +198,7 @@
             // 
             this.saveButton.Location = new System.Drawing.Point(13, 129);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(44, 22);
+            this.saveButton.Size = new System.Drawing.Size(44, 24);
             this.saveButton.TabIndex = 7;
             this.saveButton.Text = "SAVE";
             this.saveButton.UseVisualStyleBackColor = true;
@@ -208,7 +208,7 @@
             // 
             this.stopButton.Location = new System.Drawing.Point(111, 129);
             this.stopButton.Name = "stopButton";
-            this.stopButton.Size = new System.Drawing.Size(44, 22);
+            this.stopButton.Size = new System.Drawing.Size(44, 24);
             this.stopButton.TabIndex = 9;
             this.stopButton.Text = "STOP";
             this.stopButton.UseVisualStyleBackColor = true;
@@ -218,7 +218,7 @@
             // 
             this.startButton.Location = new System.Drawing.Point(62, 129);
             this.startButton.Name = "startButton";
-            this.startButton.Size = new System.Drawing.Size(44, 22);
+            this.startButton.Size = new System.Drawing.Size(44, 24);
             this.startButton.TabIndex = 8;
             this.startButton.Text = "START";
             this.startButton.UseVisualStyleBackColor = true;
@@ -228,7 +228,7 @@
             // 
             this.proxyOn.Location = new System.Drawing.Point(160, 129);
             this.proxyOn.Name = "proxyOn";
-            this.proxyOn.Size = new System.Drawing.Size(36, 22);
+            this.proxyOn.Size = new System.Drawing.Size(36, 24);
             this.proxyOn.TabIndex = 10;
             this.proxyOn.Text = "ON";
             this.proxyOn.UseVisualStyleBackColor = true;
@@ -238,7 +238,7 @@
             // 
             this.proxyOff.Location = new System.Drawing.Point(201, 129);
             this.proxyOff.Name = "proxyOff";
-            this.proxyOff.Size = new System.Drawing.Size(36, 22);
+            this.proxyOff.Size = new System.Drawing.Size(36, 24);
             this.proxyOff.TabIndex = 11;
             this.proxyOff.Text = "OFF";
             this.proxyOff.UseVisualStyleBackColor = true;
@@ -247,7 +247,7 @@
             // naiveStatusLabel
             // 
             this.naiveStatusLabel.AutoSize = true;
-            this.naiveStatusLabel.Location = new System.Drawing.Point(247, 134);
+            this.naiveStatusLabel.Location = new System.Drawing.Point(247, 135);
             this.naiveStatusLabel.Name = "naiveStatusLabel";
             this.naiveStatusLabel.Size = new System.Drawing.Size(41, 12);
             this.naiveStatusLabel.TabIndex = 8;
@@ -256,7 +256,7 @@
             // naiveStatus
             // 
             this.naiveStatus.AutoSize = true;
-            this.naiveStatus.Location = new System.Drawing.Point(285, 134);
+            this.naiveStatus.Location = new System.Drawing.Point(285, 135);
             this.naiveStatus.Name = "naiveStatus";
             this.naiveStatus.Size = new System.Drawing.Size(0, 12);
             this.naiveStatus.TabIndex = 10;

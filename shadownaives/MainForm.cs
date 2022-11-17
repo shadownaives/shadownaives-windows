@@ -230,7 +230,6 @@ namespace shadownaives
             WinINet.Reset();
             
         }
-
         private void UpdateServiceStatus()
         {
             naiveStatus.Text = Service.Status("nnp_naive");
