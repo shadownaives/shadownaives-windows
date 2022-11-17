@@ -26,7 +26,7 @@ jobs:
 
       - name: Package for Windows
         run: |
-          cd shadownaives-windows/bin/Release/
+          cd shadownaive-windows/bin/Release/
           7z a -tzip -mx=9 -mfb=128 ../shadownaives-${{ steps.get_version.outputs.VERSION }}-windows.zip .
 
       - name: Upload Release Asset 	
