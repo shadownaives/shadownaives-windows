@@ -29,15 +29,13 @@ jobs:
         run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
 
       - name: Install Package for Windows
-        run: "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" "D:\a\shadownaives-windows\shadownaives-windows\shadownaives\shadownaives.sln"
-        run: dir
-
-	  - name: Package for Windows
+        run: 'C:\Program Files (x86)\Inno Setup 6\ISCC.exe D:\a\shadownaives-windows\shadownaives-windows\shadownaives\shadownaives.sln'
+     
+      - name: Package for Windows
         run: |
           cd shadownaives/
-		  dir
           7z a -tzip -mx=9 -mfb=128 ../shadownaives-${{ steps.get_version.outputs.VERSION }}-windows.zip .
-		
+	  
       - name: Upload Release Asset 	
         uses: svenstaro/upload-release-action@v2
         with:
