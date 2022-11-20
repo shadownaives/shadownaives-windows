@@ -31,7 +31,7 @@ jobs:
       - name: Install Package for Windows
         run: ISCC.exe shadownaives.iss
        
-	  - name: Package for Windows
+      - name: Package for Windows
         run: |
           cd shadownaives-windows/Output
           7z a -tzip -mx=9 -mfb=128 ../shadownaives-${{ steps.get_version.outputs.VERSION }}-windows-setup.zip .
