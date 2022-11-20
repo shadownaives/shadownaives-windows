@@ -61,12 +61,110 @@ namespace shadownaives.Properties {
         }
         
         /// <summary>
+        ///   查找类似 @echo off
+        ///
+        ///echo 1.Create Naive Service Config
+        ///set nnp=%cd%
+        ///:xml
+        ///(
+        ///echo ^&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?^&gt;
+        ///echo ^&lt;service^&gt;
+        ///echo     ^&lt;id^&gt;nnp_naive^&lt;/id^&gt;
+        ///echo     ^&lt;name^&gt;nnp_naive^&lt;/name^&gt;
+        ///echo     ^&lt;description^&gt;Naive Client Service^&lt;/description^&gt;
+        ///echo     ^&lt;logpath^&gt;%nnp%\naive\logs^&lt;/logpath^&gt;
+        ///echo     ^&lt;log mode=&quot;roll-by-size&quot;^&gt;
+        ///echo         ^&lt;sizeThreshold^&gt;10240^&lt;/sizeThreshold^&gt;
+        ///echo         ^&lt;keepFiles^&gt;8^&lt;/keepFiles^&gt;
+        ///echo     ^&lt;/log^&gt;
+        ///echo     ^&lt;executable^&gt;%nnp%\naive\na [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        internal static string install {
+            get {
+                return ResourceManager.GetString("install", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Byte[] 类型的本地化资源。
+        /// </summary>
+        internal static byte[] naive {
+            get {
+                object obj = ResourceManager.GetObject("naive", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Byte[] 类型的本地化资源。
+        /// </summary>
+        internal static byte[] naive_service {
+            get {
+                object obj = ResourceManager.GetObject("naive_service", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+        ///&lt;configuration&gt;
+        ///    &lt;startup&gt;
+        ///        &lt;supportedRuntime version=&quot;v2.0.50727&quot; /&gt;
+        ///    &lt;/startup&gt;
+        ///    &lt;runtime&gt;
+        ///        &lt;generatePublisherEvidence enabled=&quot;false&quot; /&gt;
+        ///    &lt;/runtime&gt;
+        ///&lt;/configuration&gt; 的本地化字符串。
+        /// </summary>
+        internal static string naive_service_exe {
+            get {
+                return ResourceManager.GetString("naive_service_exe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
         internal static byte[] proxy {
             get {
                 object obj = ResourceManager.GetObject("proxy", resourceCulture);
                 return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 @echo off
+        ///
+        ///echo 1. Stop Nginx Service
+        ///net stop nnp_nginx
+        ///echo.
+        ///
+        ///echo 2. Stop Naive Service
+        ///net stop nnp_naive
+        ///echo.
+        ///
+        ///echo 3. Delete Nginx Service
+        ///sc delete nnp_nginx
+        ///echo. 
+        ///
+        ///echo 4. Delete Naive Service
+        ///sc delete nnp_naive
+        ///echo.
+        ///
+        ///echo 5. Delete Service Config
+        ///DEL /Q /F /S naive\naive-service.xml 
+        ///DEL /Q /F /S naive\logs
+        ///DEL /Q /F /S nginx\nginx-service.xml
+        ///DEL /Q /F /S nginx\logs
+        ///DEL /Q /F /S naive.ini
+        ///rd /s /q naive
+        ///rd /s /q nginx
+        ///echo.
+        ///exit 的本地化字符串。
+        /// </summary>
+        internal static string uninstall {
+            get {
+                return ResourceManager.GetString("uninstall", resourceCulture);
             }
         }
     }

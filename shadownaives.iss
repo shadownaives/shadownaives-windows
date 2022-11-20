@@ -22,7 +22,7 @@ VersionInfoCompany={#MyAppPublisher}
 VersionInfoVersion={#MyAppVersion}
 VersionInfoCopyright={#MyAppPublisher} inc
 VersionInfoProductVersion={#MyAppVersion}
-
+PrivilegesRequired=admin
 AppVersion={#Version}
 AppPublisher={#Copyright} Inc.
 AppCopyright=Copyright (C) 2022-2022 {#Copyright} Inc.
