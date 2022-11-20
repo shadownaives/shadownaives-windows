@@ -31,11 +31,16 @@ jobs:
       - name: Install Package for Windows
         run: ISCC.exe shadownaives.iss
        
+	  - name: Package for Windows
+        run: |
+          cd shadownaives-windows/Output
+          7z a -tzip -mx=9 -mfb=128 ../shadownaives-${{ steps.get_version.outputs.VERSION }}-windows-setup.zip .
+
       - name: Upload Release Asset 	
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: shadownaives/bin/*.zip
+          file: shadownaives-windows/*.zip
           tag: ${{ github.ref }}
           file_glob: true
           prerelease: true
