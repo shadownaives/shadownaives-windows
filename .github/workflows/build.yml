@@ -9,6 +9,9 @@ jobs:
   Shadownaives-Release:
     runs-on: windows-2019
     steps:
+      - name: InnoSetup Install
+        run: choco install innosetup
+      
       - name: Check out repository code
         uses: actions/checkout@v3
         
