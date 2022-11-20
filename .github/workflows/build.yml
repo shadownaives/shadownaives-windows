@@ -29,7 +29,7 @@ jobs:
         run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
 
       - name: Install Package for Windows
-        run: D://Program Files (x86)//Inno Setup 6//ISCC.exe D://a//shadownaives-windows//shadownaives-windows//shadownaives//shadownaives.sln
+        run: ISCC.exe shadownaives/shadownaives.iss
        
       - name: Upload Release Asset 	
         uses: svenstaro/upload-release-action@v2
