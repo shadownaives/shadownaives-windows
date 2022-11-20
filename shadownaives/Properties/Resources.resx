@@ -133,6 +133,9 @@
   <data name="proxy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\proxy.pac;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="readme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\naive\logs\readme.md;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="uninstall" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\uninstall.bat;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>

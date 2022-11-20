@@ -29,9 +29,9 @@ AppCopyright=Copyright (C) 2022-2022 {#Copyright} Inc.
 
 
 [Files]
-Source: "D:\nnp\*" ; DestDir: "{app}\"; Flags: ignoreversion
-Source: "D:\nnp\naive\*"; DestDir: "{app}\naive"; Flags: ignoreversion
-Source: "D:\nnp\naive\logs\*"; DestDir: "{app}\naive\logs"; Flags: ignoreversion
+Source: "D:\a\shadownaives-windows\shadownaives-windows\shadownaives\bin\Release\*" ; DestDir: "{app}\"; Flags: ignoreversion
+Source: "D:\a\shadownaives-windows\shadownaives-windows\shadownaives\bin\Release\naive\*"; DestDir: "{app}\naive"; Flags: ignoreversion
+Source: "D:\a\shadownaives-windows\shadownaives-windows\shadownaives\bin\Release\naive\logs\*"; DestDir: "{app}\naive\logs"; Flags: ignoreversion
 
 [run]
 Filename: "{app}\install.bat"; Flags: runhidden

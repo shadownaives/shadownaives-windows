@@ -133,6 +133,16 @@ namespace shadownaives.Properties {
         }
         
         /// <summary>
+        ///   查找 System.Byte[] 类型的本地化资源。
+        /// </summary>
+        internal static byte[] readme {
+            get {
+                object obj = ResourceManager.GetObject("readme", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 @echo off
         ///
         ///echo 1. Stop Nginx Service
